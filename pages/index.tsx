@@ -3,6 +3,8 @@ import type { NextPage } from 'next'
 import { useAppDispatch, useAppSelector } from './store/slices/hooks'
 import { increment } from './store/slices/userslices'
 import { useSelector } from 'react-redux'
+import Button from './components/button'
+
 
 const Home: NextPage = () => {
   const dispatch = useAppDispatch();
@@ -10,11 +12,12 @@ const Home: NextPage = () => {
 
 
   return (
-    <div>
+    <div className='text-center'>
       {value.value}
       <br />
-      <button onClick={() => dispatch(increment())}>Increment</button>
 
+      <Button lable="Increment" classname="w-24 h-10 rounded-md text-white" 
+      onClick={() => dispatch(increment())} />
     </div>
   )
 }
